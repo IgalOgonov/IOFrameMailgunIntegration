@@ -1,0 +1,17 @@
+{
+	"dynamicJobProperties":{
+		"mailgun_mailing_queue":{
+			"active":1,
+			"_url":"cli/cron-management/common/queue_management.php",
+			"retries":1,
+			"maxParallel":2,
+			"_queue":{
+				"listenTo":"mailgun_mailing",
+				"url":"cli/cron-management/common/email-queue-managers/integrations/send_mail_mailgun_queue.php"
+			},
+			"email":{
+				"runtimeSafetyMargin":1
+			}
+		}
+	}
+}

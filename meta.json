@@ -1,0 +1,6 @@
+{
+	"name": "Mailgun Integration",
+	"version": 1,
+	"summary": "Integrates Mailgun Functionality Into IOFrame",
+	"description": "Adds Mailgun integration to IOFrame. Includes a Handler class, CLI queue config+handler, and a verbose test file. Can also automatically initiate relevant settings, and install the required library via composer."
+}

@@ -1,0 +1,6 @@
+{
+  "mailgunAPIKey":{"name":"API Key","type":"password","optional":true,"desc":"Mailgun API key.<br> See Mailgun onboarding documentation."},
+  "mailgunDomain":{"name":"Domain","type":"text","optional":true,"desc":"The domain you send your mail from.<br> See Mailgun onboarding documentation."},
+  "mailgunHost":{"name":"API Host","type":"text","optional":true,"desc":"Mailgun host, typically 'https://api.eu.mailgun.net' or 'https://api.mailgun.net'"},
+  "installLibraries":{"name":"Install Mailgun library with composer?","default":1,"type":"radio","list":{"Yes":1,"No":0},"desc":"Runs composer command 'require mailgun/mailgun-php'"}
+}
