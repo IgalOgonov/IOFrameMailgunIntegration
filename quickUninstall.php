@@ -17,7 +17,7 @@ foreach($filesToDelete as $file) {
         else
             echo 'Deleting file ' . $file . EOL;
     }
-};
+}
 
 if(!empty($options['uninstallLibraries'])){
 

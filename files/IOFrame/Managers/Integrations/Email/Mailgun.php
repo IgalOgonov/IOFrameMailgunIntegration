@@ -2,9 +2,6 @@
 namespace IOFrame\Managers\Integrations\Email{
     define('IOFrameManagersIntegrationsEmailMailgun',true);
 
-    if(!defined('IOFrameAbstractLogger'))
-        require __DIR__.'/../../../Abstract/Logger.php';
-
     /** Handles mail sending via Mailgun API (for SMTP, use the regular MailManager).
      * Requires the relevant Mail Settings to be set:
      * "mailgunHost" "mailgunDomain" "mailgunAPIKey"
@@ -76,11 +73,11 @@ namespace IOFrame\Managers\Integrations\Email{
          * @returns mixed|null API result
          *
          */
-        function sendMail(array|string $to, string $subject, string $body, array $inputs = [], array $params = []){
+        function sendMail(array|string $to, string $subject, string $body, array $inputs = [], array $params = []): bool {
             $test = $params['test']??false;
             $verbose = $params['verbose'] ?? $test;
 
-            $inputs['from'] = $inputs['from'] ? $inputs['from'] : $this->MailManager->mailSettings->getSetting('defaultAlias');
+            $inputs['from'] = $inputs['from'] ?: $this->MailManager->mailSettings->getSetting('defaultAlias');
 
             if(empty($inputs['from'])){
                 $this->logger->error('Tried to send Mailgun mail without from, and no default alias');
@@ -131,7 +128,7 @@ namespace IOFrame\Managers\Integrations\Email{
          * @return bool
          * @throws \Exception
          */
-        function sendMailTemplate( $to, $subject, $template, $inputs = [], $params = []  ){
+        function sendMailTemplate(array $to, string $subject, string $template, array $inputs = [], array $params = []  ): bool {
             $test = $params['test']??false;
             $verbose = $params['verbose'] ?? $test;
             $varArray = $inputs['varArray'] ?? [];

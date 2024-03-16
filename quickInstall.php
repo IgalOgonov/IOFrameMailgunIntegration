@@ -24,7 +24,7 @@ foreach($foldersToCopy as $folder) {
         else
             echo 'Copying folder ' . $folder[0] . ' to ' . $folder[1] . EOL;
     }
-};
+}
 
 /* Install via composer*/
 

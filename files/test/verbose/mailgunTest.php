@@ -2,15 +2,8 @@
 
 
 //Include mail
-require_once __DIR__.'/../../IOFrame/Managers/MailManager.php';
-if(!defined('IOFrameUtilPureUtilFunctions'))
-    require __DIR__.'/../../IOFrame/Util/PureUtilFunctions.php';
 try{
     $mail = new \IOFrame\Managers\MailManager($settings,array_merge($defaultSettingsParams,['verbose'=>true]));
-
-    if(!defined('IOFrameManagersIntegrationsEmailMailgun'))
-        require_once __DIR__.'/../../IOFrame/Managers/Integrations/Email/Mailgun.php';
-
 
     $mailgun = new \IOFrame\Managers\Integrations\Email\Mailgun($settings,$mail);
     /*var_dump(

@@ -1,10 +1,4 @@
 <?php
-if(!defined('IOFrameManagersMailManager'))
-    require __DIR__.'/../../../../../IOFrame/Managers/MailManager.php';
-if(!defined('IOFrameManagersIntegrationsEmailMailgun'))
-    require __DIR__.'/../../../../../IOFrame/Managers/Integrations/Email/Mailgun.php';
-if(!defined('IOFrameUtilCLICommonMailQueueFunctions'))
-    require __DIR__.'/../../../../../IOFrame/Util/CLI/CommonMailQueueFunctions.php';
 
 /* All errors and results similar to send_mail_default_queue.php $_handleQueue function. */
 $_handleQueue = function(&$parameters,&$errors,&$opt){
